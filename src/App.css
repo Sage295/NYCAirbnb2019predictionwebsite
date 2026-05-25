@@ -382,6 +382,119 @@ select {
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.32);
 }
 
+.report-actions {
+  margin-top: 4rem;
+  padding-bottom: 6rem;
+  text-align: center;
+}
+
+.airbnb-team-button,
+.airbnb-info-back {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 17px;
+  border: 1px solid rgba(255, 247, 232, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 247, 232, 0.09);
+  color: #fff7e8;
+  font-weight: 900;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+}
+
+.airbnb-info-page {
+  display: grid;
+  width: 100%;
+  min-height: 100svh;
+  margin: 0;
+  padding: clamp(18px, 4vw, 48px);
+  background:
+    radial-gradient(circle at 78% 24%, rgba(186, 172, 142, 0.22), transparent 30%),
+    linear-gradient(180deg, #020202 0%, #0b0a08 100%);
+  color: #fff7e8;
+}
+
+.airbnb-info-page::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 250, 240, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 250, 240, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  content: "";
+}
+
+.airbnb-info-back {
+  position: relative;
+  z-index: 1;
+  align-self: start;
+  width: fit-content;
+}
+
+.team-profile {
+  position: relative;
+  display: grid;
+  align-self: center;
+  gap: 18px;
+  width: min(920px, 100%);
+}
+
+.team-profile > p {
+  margin: 0;
+  color: #d8c6a3;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.team-profile h1,
+.team-profile h2,
+.team-profile h3 {
+  margin: 0;
+  color: #fff7e8;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.team-profile h1 {
+  max-width: 880px;
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.92;
+}
+
+.team-profile h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.team-profile h3 {
+  margin-top: 14px;
+  color: #d8c6a3;
+  font-size: 1.4rem;
+}
+
+.team-profile article {
+  display: grid;
+  gap: 14px;
+  max-width: 820px;
+  padding: clamp(20px, 4vw, 34px);
+  border: 1px solid rgba(216, 198, 163, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 247, 232, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.team-profile article p {
+  margin: 0;
+  color: rgba(255, 247, 232, 0.76);
+  font-size: clamp(1rem, 1.5vw, 1.16rem);
+  font-weight: 700;
+  line-height: 1.72;
+}
+
 @media (max-width: 860px) {
   .airbnb-site {
     min-height: 245svh;

@@ -243,6 +243,7 @@ function App() {
   const [propertyType, setPropertyType] = useState('apartment')
   const [borough, setBorough] = useState('Manhattan')
   const [bedrooms, setBedrooms] = useState('1')
+  const [view, setView] = useState<'main' | 'team'>('main')
 
   const estimate = useMemo(() => {
     const baseByBorough: Record<string, number> = {
@@ -422,6 +423,10 @@ function App() {
     return () => cancelAnimationFrame(animationId)
   }, [])
 
+  if (view === 'team') {
+    return <MeetTheTeamPage onBack={() => setView('main')} />
+  }
+
   return (
     <main className="airbnb-site" ref={siteRef}>
       <section className="airbnb-hero">
@@ -521,6 +526,52 @@ function App() {
             </article>
           ))}
         </div>
+
+        <div className="report-actions">
+          <button className="airbnb-team-button" type="button" onClick={() => setView('team')}>
+            Meet the Team
+          </button>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+function MeetTheTeamPage({ onBack }: { onBack: () => void }) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  return (
+    <main className="airbnb-info-page">
+      <button className="airbnb-info-back" type="button" onClick={onBack}>
+        Back to report
+      </button>
+
+      <section className="team-profile">
+        <p>Project Team</p>
+        <h1>Meet the Team</h1>
+        <article>
+          <h2>Apoorva Thirukazhukundram Shakila Raja</h2>
+          <p>
+            Passionate about data analytics and data science, with a strong interest in
+            turning data into meaningful insights and impactful solutions. Fluent in
+            French and currently learning Spanish, while continuously exploring new
+            technologies and analytical tools.
+          </p>
+          <h3>Major</h3>
+          <p>
+            Pursuing a major in Data Science with minors in Computer Science and
+            Statistics at the University of Central Florida (UCF).
+          </p>
+          <h3>Aim</h3>
+          <p>
+            Aspiring to build a career as a Data Scientist and Data Analyst, using
+            data-driven approaches to solve real-world problems, create innovative
+            solutions, and contribute to the growth of technology and business
+            intelligence.
+          </p>
+        </article>
       </section>
     </main>
   )
